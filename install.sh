@@ -14,10 +14,16 @@ command -v brew >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.github
 
 # Install brew packages
 
-packages="gnu-sed cmake adobe-acrobat-reader microsoft-office node neovim"
+packages="gnu-sed cmake git node neovim"
 
 for package in $packages; do
   brew install $package
+done
+
+casks="adobe-acrobat-reader microsoft-office zoom"
+
+for cask in $casks; do
+  brew install --cask $cask
 done
 
 # Reset sudo timestamp to expire immediately after the script finishes
